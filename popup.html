@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SuperBrowse</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>SuperBrowse</h1>
+      <div class="theme-toggle" id="themeToggle"></div>
+    </div>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="features">Features</div>
+      <div class="tab" data-tab="sessions">Sessions</div>
+      <div class="tab" data-tab="privacy">Privacy</div>
+      <div class="tab" data-tab="settings">Settings</div>
+    </div>
+    
+    <div class="content">
+      <div class="tab-content active" id="features">
+        <div class="feature-item">
+          <div class="feature-title">Private Mode</div>
+          <div class="toggle" id="privateToggle"></div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-title">Vertical Tabs</div>
+          <div class="toggle" id="verticalToggle"></div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-title">Tab Sleeping</div>
+          <div class="toggle" id="sleepingToggle"></div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-title">Fast Loading</div>
+          <div class="toggle" id="fastLoadingToggle"></div>
+        </div>
+        
+        <div class="feature-buttons">
+          <button id="createGroup">Create Tab Group</button>
+          <button id="floatTab">Float Current Tab</button>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="sessions">
+        <div class="session-list" id="sessionList">
+          <!-- Sessions will be loaded here -->
+        </div>
+        
+        <div class="add-session">
+          <input type="text" id="sessionName" placeholder="Session name">
+          <div class="color-picker">
+            <div class="color" data-color="#4285f4" style="background-color: #4285f4;"></div>
+            <div class="color" data-color="#0f9d58" style="background-color: #0f9d58;"></div>
+            <div class="color" data-color="#db4437" style="background-color: #db4437;"></div>
+            <div class="color" data-color="#f4b400" style="background-color: #f4b400;"></div>
+            <div class="color" data-color="#9e29b1" style="background-color: #9e29b1;"></div>
+          </div>
+          <button id="addSession">Add Session</button>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="privacy">
+        <div class="feature-item">
+          <div class="feature-title">Stealth Mode</div>
+          <div class="toggle" id="stealthToggle"></div>
+        </div>
+        
+        <div class="feature-item">
+          <div class="feature-title">Auto-Clear Cookies</div>
+          <div class="toggle" id="autoClearToggle"></div>
+        </div>
+        
+        <div class="proxy-settings">
+          <div class="feature-item">
+            <div class="feature-title">Use Proxy</div>
+            <div class="toggle" id="proxyToggle"></div>
+          </div>
+          
+          <div class="proxy-inputs">
+            <input type="text" id="proxyHost" placeholder="Proxy host">
+            <input type="text" id="proxyPort" placeholder="Port">
+          </div>
+        </div>
+        
+        <div class="user-agent">
+          <div class="feature-title">User-Agent</div>
+          <select id="userAgent">
+            <option value="default">Default</option>
+            <option value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36">Chrome Windows</option>
+            <option value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15">Safari Mac</option>
+            <option value="Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1">iPhone</option>
+            <option value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36">Linux</option>
+          </select>
+        </div>
+        
+        <button id="clearData">Clear All Browsing Data</button>
+      </div>
+      
+      <div class="tab-content" id="settings">
+        <div class="theme-section">
+          <div class="feature-title">Theme</div>
+          <div class="theme-options">
+            <div class="theme-option" data-theme="default">Default</div>
+            <div class="theme-option" data-theme="dark">Dark</div>
+            <div class="theme-option" data-theme="blue">Blue</div>
+            <div class="theme-option" data-theme="green">Green</div>
+            <div class="theme-option" data-theme="purple">Purple</div>
+          </div>
+        </div>
+        
+        <div class="keyboard-shortcuts">
+          <div class="feature-title">Keyboard Shortcuts</div>
+          <div class="shortcut-list">
+            <div class="shortcut">
+              <div class="shortcut-name">Toggle Private Mode</div>
+              <div class="shortcut-key">Ctrl+Shift+P</div>
+            </div>
+            <div class="shortcut">
+              <div class="shortcut-name">Create Tab Group</div>
+              <div class="shortcut-key">Ctrl+Shift+G</div>
+            </div>
+            <div class="shortcut">
+              <div class="shortcut-name">Toggle Vertical Tabs</div>
+              <div class="shortcut-key">Ctrl+Shift+V</div>
+            </div>
+            <div class="shortcut">
+              <div class="shortcut-name">Float Current Tab</div>
+              <div class="shortcut-key">Ctrl+Shift+F</div>
+            </div>
+          </div>
+        </div>
+        
+        <button id="saveSettings">Save Settings</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
